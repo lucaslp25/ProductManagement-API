@@ -21,7 +21,5 @@ public class CategoryResponseDTO implements Serializable {
         name = category.getName();
     }
     //i take the Category attributes and pass to this class through the constructor
-
 }
-
 //this class show to the final user the only attributes of category that i want to show!

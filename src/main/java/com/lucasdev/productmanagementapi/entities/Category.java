@@ -22,7 +22,7 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100)
+    @Column(length = 100, unique = true)
     @NotBlank(message = "The field 'name' cannot be empty")
     private String name;
 
