@@ -2,6 +2,7 @@ package com.lucasdev.productmanagementapi.DTO;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,6 +34,7 @@ public class ProductRequestDTO implements Serializable {
 
     private String imageUrl;
 
+    @NotEmpty(message = "the product need´s one or more categories!")
     private Set<Long> categoryIds = new HashSet<>();
-    //list of categories IDS, in the hour of the user are create a product, their send an id for choice a category, and the program will be executed for see if the id already exists!
+    //list of categories IDS, in the hour of the user are create a product, their send an id for choice a category, and the program will be executed for see if the id already exists
 }

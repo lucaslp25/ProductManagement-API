@@ -90,6 +90,7 @@ public class CategoryController {
     //this method is  similar to insert
     @Operation(summary = "Update the category", description = "Update the category switching the field 'name'.", responses = { @ApiResponse(responseCode =  "200", description = "Category updated successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = CategoryResponseDTO.class))),
             @ApiResponse(responseCode = "400", description = "Invalid request data.", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Resource not found..", content = @Content),
             @ApiResponse(responseCode = "409", description = "Conflict, some value already exists", content = @Content),
             @ApiResponse(responseCode = "500", description = "Internal server error, unexpected error.",
                     content = @Content)
@@ -116,6 +117,7 @@ public class CategoryController {
     })
     public ResponseEntity<StandardMessageDTO> delete(@PathVariable Long id) {
         categoryService.delete(id);
+
 
         String message = "Category ID: " +id +" was deleted successfully";
         //taking the current path

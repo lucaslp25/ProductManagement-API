@@ -1,7 +1,5 @@
 package com.lucasdev.productmanagementapi.DTO;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +20,5 @@ public class ProductQuotationResponseDTO implements Serializable {
     private String productName;
     private BigDecimal originalPriceBRL; //price in real R$
     private BigDecimal convertedPrice;
-    private String currencyCode; //the code that was converted.. U$, ¢U
-
+    private String currencyCode; //the code that was converted... USD, EUR
 }

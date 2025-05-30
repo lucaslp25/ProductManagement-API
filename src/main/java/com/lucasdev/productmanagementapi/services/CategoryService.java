@@ -4,6 +4,7 @@ import com.lucasdev.productmanagementapi.DTO.CategoryRequestDTO;
 import com.lucasdev.productmanagementapi.DTO.CategoryResponseDTO;
 import com.lucasdev.productmanagementapi.entities.Category;
 import com.lucasdev.productmanagementapi.exceptions.DataBaseException;
+import com.lucasdev.productmanagementapi.exceptions.IntegrityDataException;
 import com.lucasdev.productmanagementapi.exceptions.ResourceNotFoundException;
 import com.lucasdev.productmanagementapi.repositories.CategoryRepository;
 import org.springframework.beans.BeanUtils;
@@ -97,8 +98,7 @@ public class CategoryService {
             categoryRepository.deleteById(id);
 
         }catch (DataIntegrityViolationException e){
-            throw new DataIntegrityViolationException("Cannot delete category because it is associated with products.", e);
+            throw new DataIntegrityViolationException(e.getMessage());
         }
     }
-
 }

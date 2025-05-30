@@ -1,6 +1,5 @@
 package com.lucasdev.productmanagementapi.DTO;
 
-import com.lucasdev.productmanagementapi.entities.Category;
 import com.lucasdev.productmanagementapi.entities.Product;
 import lombok.*;
 

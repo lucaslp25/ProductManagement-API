@@ -26,7 +26,7 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 150) //the max of length name
+    @Column(length = 150, unique = true) //the max of length name, the name is unique
     @NotBlank(message = "The field 'name' cannot be empty")
     private String name;
 
@@ -49,6 +49,15 @@ public class Product implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "category_id"
     ))
     private Set<Category> categories = new HashSet<>();
+
+
+    public Product(Long id, String name, String description, BigDecimal price, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.ImageUrl = imageUrl;
+    }
 
     //HashCode and Equals only for ID!!
     @Override
